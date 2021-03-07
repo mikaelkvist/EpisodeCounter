@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/primary">
+
+    <!-- Mask is required for ripple. Shape to be filled by ripple  -->
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <!-- mask color/drawable is not shown -->
+            <solid android:color="@color/white"/>
+            <corners android:radius="@dimen/radius_small_button"/>
+        </shape>
+    </item>
+
+
+    <!-- The shape and size used as bounds by ripple -->
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:height="@dimen/diameter_small_button"
+                android:width="@dimen/diameter_small_button"/>
+            <!-- Transparent color is best, otherwise the ripple effect will be a
+                mixture of colors -->
+            <solid android:color="@android:color/transparent"/>
+            <corners android:radius="@dimen/radius_small_button"/>
+        </shape>
+    </item>
+
+
+</ripple>

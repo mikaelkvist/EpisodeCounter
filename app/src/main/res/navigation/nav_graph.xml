@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainViewFragment">
+
+    <fragment
+        android:id="@+id/MainViewFragment"
+        android:name="com.example.episode_counter.MainViewFragment"
+        android:label="main_view"
+        tools:layout="@layout/main_view">
+
+        <action
+            android:id="@+id/action_MainView_to_Series"
+            app:destination="@id/fragmentExpanded"
+            app:exitAnim="@anim/no_change"
+            app:enterAnim="@anim/slide_left_enter"
+            app:popExitAnim="@anim/slide_right_exit"/>
+        <action
+            android:id="@+id/action_MainViewFragment_to_fragmentEditSeries"
+            app:destination="@id/fragmentEditSeries" />
+        <action
+            android:id="@+id/action_MainViewFragment_to_fragmentSortSeries"
+            app:destination="@id/fragmentSortSeries" />
+        <action
+            android:id="@+id/action_MainViewFragment_to_fragmentImportExport"
+            app:destination="@id/fragmentImportExport" />
+        <action
+            android:id="@+id/action_MainViewFragment_to_mainViewFragmentSelected"
+            app:destination="@id/mainViewFragmentSelected" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentExpanded"
+        android:name="com.example.episode_counter.FragmentExpanded"
+        android:label="item_expanded"
+        tools:layout="@layout/item_expanded">
+        <action
+            android:id="@+id/action_cancel"
+            app:popUpTo="@id/fragmentExpanded"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_fragmentExpanded_to_fragmentEditSeries"
+            app:destination="@id/fragmentEditSeries" />
+    </fragment>
+    <dialog
+        android:id="@+id/fragmentEditSeries"
+        android:name="com.example.episode_counter.FragmentEditSeries"
+        android:label="edit_series"
+        tools:layout="@layout/edit_series">
+        <action
+            android:id="@+id/action_cancel"
+            app:popUpTo="@id/fragmentEditSeries"
+            app:popUpToInclusive="true"/>
+    </dialog>
+    <dialog
+        android:id="@+id/fragmentSortSeries"
+        android:name="com.example.episode_counter.FragmentSortSeries"
+        android:label="FragmentSortSeries"
+        tools:layout="@layout/sort_series">
+        <action
+            android:id="@+id/action_cancel"
+            app:popUpTo="@id/fragmentSortSeries"
+            app:popUpToInclusive="true"/>
+    </dialog>
+    <dialog
+        android:id="@+id/fragmentImportExport"
+        android:name="com.example.episode_counter.FragmentImportExport"
+        android:label="FragmentImportExport"
+        tools:layout="@layout/import_export"/>
+        <action
+            android:id="@+id/action_cancel"
+            app:popUpTo="@id/fragmentImportExport"
+            app:popUpToInclusive="true"/>
+    <fragment
+        android:id="@+id/mainViewFragmentSelected"
+        android:name="com.example.episode_counter.MainViewFragmentSelected"
+        android:label="main_view_selected"
+        tools:layout="@layout/main_view_selected">
+
+        <action
+            android:id="@+id/action_cancel"
+            app:popUpTo="@id/mainViewFragmentSelected"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>

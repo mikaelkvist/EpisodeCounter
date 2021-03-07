@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Icon -->
+    <item android:gravity="center"
+        android:right="8dp">
+        <rotate
+            android:drawable="@drawable/ic_right_48"
+            android:fromDegrees="180"
+            android:pivotY="50%"
+            android:pivotX="50%"/>
+    </item>
+
+    <!-- Ripple effect -->
+    <item
+        android:gravity="center"
+        android:drawable="@drawable/ripple_large"/>
+
+</layer-list>

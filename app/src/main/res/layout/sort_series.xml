@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    android:background="@drawable/background_dialog"
+    tools:context=".FragmentSortSeries">
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/toolbar_height"
+        android:gravity="center"
+        android:text="Sort By"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_gravity="center"
+        style="@style/TitleTextStyle"/>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/padding_small"/>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/title_asc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title (A-Z)"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"
+            style="@style/RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/title_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title (Z-A)"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"
+            style="@style/RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rating_high"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating (high-low)"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"
+            style="@style/RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/rating_low"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating (low-high)"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"
+            style="@style/RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/date_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date (new-old)"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"
+            style="@style/RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/date_old"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date (old-new)"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"
+            style="@style/RadioButton"/>
+
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center_horizontal"
+        android:paddingBottom="@dimen/padding_normal">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            style="@style/NegativeButtonStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/done"/>
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sort"
+            style="@style/PositiveButtonStyle"
+            app:layout_constraintStart_toEndOf="@id/cancel"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

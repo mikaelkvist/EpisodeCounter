@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Icon -->
+    <item android:gravity="center"
+          android:drawable="@drawable/ic_right_48"
+          android:left="8dp">
+    </item>
+
+
+    <!-- Ripple effect -->
+    <item
+        android:gravity="center"
+        android:drawable="@drawable/ripple_large"/>
+
+</layer-list>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    android:background="@drawable/background_dialog"
+    tools:context=".FragmentEditSeries">
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/toolbar_height"
+        android:gravity="center"
+        android:text="Edit Fragment"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_gravity="center"
+        style="@style/TitleTextStyle"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/edit_title"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:hint="enter new title"
+        android:textColorHint="@color/primary_dark"
+        android:inputType="text"
+        style="@style/BodyTextStyle"
+        android:gravity="center"
+        android:backgroundTint="@color/primary_dark"
+        android:textColor="@color/primary"
+        android:layout_below="@id/title_textview"
+        android:layout_centerHorizontal="true"/>
+
+ <!--   <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/padding_small"/>
+-->
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Theme.SeriesTracker.RatingBar"
+        android:layout_below="@id/edit_title"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/edit_imageview"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_image_120"
+        android:layout_below="@id/ratingbar"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/remove_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Image"
+        style="@style/NegativeButtonStyle"
+        android:layout_below="@id/edit_imageview"
+        android:layout_centerHorizontal="true"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center_horizontal"
+        android:paddingBottom="@dimen/padding_normal"
+        android:layout_below="@id/remove_image"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            style="@style/NegativeButtonStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/done"/>
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            style="@style/PositiveButtonStyle"
+            app:layout_constraintStart_toEndOf="@id/cancel"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
+

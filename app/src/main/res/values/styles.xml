@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.SeriesTracker.Button" parent="Widget.AppCompat.ImageButton">
+        <item name="colorControlHighlight">@color/complimentary</item>
+    </style>
+
+    <style name="Theme.SeriesTracker.Button.Left">
+        <item name="android:background">@drawable/arrow_left_large</item>
+    </style>
+    <style name="Theme.SeriesTracker.Button.Right">
+        <item name="android:background">@drawable/arrow_right_large</item>
+    </style>
+    <style name="Theme.SeriesTracker.Button.DONE">
+        <item name="android:background">@drawable/button_wide</item>
+        <item name="android:text">Done</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Button_Remove">
+        <item name="android:background">@drawable/button_wide</item>
+        <item name="android:text">Remove Image</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.SeriesTracker.Button.Cancel">
+        <item name="android:background">@drawable/button_wide_inverted</item>
+        <item name="android:text">Cancel</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/complimentary</item>
+    </style>
+
+    <style name="Theme.SeriesTracker.Button.Dot">
+        <item name="android:src">@drawable/radio_button_selector</item>
+        <item name="backgroundTint">@color/transparent</item>
+    </style>
+    <style name="Theme.SeriesTracker.Button.Dot.Clicked">
+        <item name="android:clickable">false</item>
+        <item name="android:src">@drawable/dot_checked</item>
+    </style>
+
+    <style name="RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.RadioButton</item>
+       <!-- <item name="android:button">@drawable/radio_button_selector</item>
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:padding">@dimen/padding_small</item>
+        <item name="android:textSize">@dimen/text_size_small</item>-->
+    </style>
+    <style name="ThemeOverlay.App.RadioButton" parent="">
+        <item name="colorOnSurface">@color/primary_dark</item>
+        <item name="colorSecondary">@color/primary</item>
+    </style>
+
+    <style name="Theme.SeriesTracker.RatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="android:stepSize">0.5</item>
+        <item name="android:numStars">5</item>
+        <item name="android:progressTint">@color/primary</item>
+        <item name="android:progressBackgroundTint">@color/complimentary_background</item>
+    </style>
+    <style name="Theme.SeriesTracker.RatingBarIndicatorSmall" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="android:isIndicator">true</item>
+        <item name="android:progressTint">@color/primary_dark</item>
+        <item name="android:progressBackgroundTint">@color/complimentary_background</item>
+    </style>
+    <style name="Theme.SeriesTracker.Item">
+        <item name="android:backgroundTint">@color/complimentary_background</item>
+<!--        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>-->
+        <item name="cardUseCompatPadding">true</item>
+        <item name="cardCornerRadius">8dp</item>
+    </style>
+    <style name="Theme.SeriesTracker.ButtonOverflow">
+        <item name="android:src">@drawable/overflow_small</item>
+    </style>
+    <style name="Theme.SeriesTracker.OverflowTheme">
+        <item name="android:background">@color/black</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Theme.SeriesTracker.Toolbar">
+        <item name="android:layout_height">@dimen/toolbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:backgroundTint">@color/transparent</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+    <style name="AppModalStyle" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="WrapContentDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowMinWidthMajor">0%</item>
+        <item name="windowMinWidthMinor">0%</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/BodyTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="colorSurface">@color/complimentary_background</item>
+        <item name="colorOnSurface">@color/complimentary_background</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialAlertDialog.Rounded</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.MaterialAlertDialog.Rounded" parent="">
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="TitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_normal</item>
+    </style>
+    <style name="TitleTextStyleCompliment" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/complimentary_background</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+    <style name="BodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/primary_dark</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/primary</item>
+        <item name="rippleColor">@color/primary</item>
+    </style>
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/complimentary</item>
+        <item name="rippleColor">@color/complimentary</item>
+    </style>
+
+
+    <style name="AlertDialogTheme.Center" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">#212121</item>
+        <item name="materialAlertDialogTitlePanelStyle">@style/TitlePaneStyleCenter</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TitleTextStyleCenter</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/TitleIconStyleCenter</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/BodyTextStyleCenter</item>
+        <item name="buttonBarStyle">@style/ButtonBarStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+    </style>
+    <style name="TitlePaneStyleCenter" parent="MaterialAlertDialog.MaterialComponents.Title.Panel.CenterStacked">
+        <item name="android:background">#f5f5f5</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    <style name="TitleIconStyleCenter" parent="MaterialAlertDialog.MaterialComponents.Title.Icon.CenterStacked">
+        <item name="android:tint">#d50000</item>
+    </style>
+    <style name="TitleTextStyleCenter" parent="MaterialAlertDialog.MaterialComponents.Title.Text.CenterStacked">
+        <item name="android:textColor">#484848</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="BodyTextStyleCenter" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">#c7c7c7</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="ButtonBarStyle">
+        <item name="android:background">#000000</item>
+    </style>
+
+
+</resources>
