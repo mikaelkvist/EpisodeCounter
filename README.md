@@ -1,11 +1,8 @@
 # EpisodeCounter
-> Short blurb about what your product does.
+> EpisodeCounter keeps track of your series.
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+Have you ever found yourself in a situation where your don't remember the name of all the good series you have watched? Maybe you want to suggest a series to a friend but can't remeber its name or maybe you can't remeber what episode you last watched. EpisodeCounter helps you keep track of your series for you and is easy to use.
 
-One to two paragraph statement about your product and what it does.
 
 ![](header.png)
 
