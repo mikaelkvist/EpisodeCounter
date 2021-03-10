@@ -6,9 +6,13 @@ Have you ever found yourself in a situation where your don't remember the name o
 
 ![](intro_image.png)
 
+## Prerequisites
+
+A device with at least Android 5.0 (Lollipop) if installing the APK or AndroidStudio if editing the project.
+
 ## Installation
 
-Download the apk and install on your Android device or clone or fork the project and edit it in AndroidStudio.
+Download the APK and install on your Android device or clone or fork the project and edit it in AndroidStudio.
 
 ## TODO
 
