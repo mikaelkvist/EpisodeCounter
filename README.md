@@ -12,6 +12,7 @@ Download the apk and install on your Android device or clone or fork the project
 
 ## TODO
 
-- Use RxJava in a comsistent way (as similar as possible in all cases)
+- Create APK for downloading
+- Use RxJava in a consistent way (as similar as possible in all cases)
 - Make the RecycerView scroll to the top when a new sorting option is seleted
 
