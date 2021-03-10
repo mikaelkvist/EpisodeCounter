@@ -4,7 +4,7 @@
 Have you ever found yourself in a situation where your don't remember the name of all the good series you have watched? Maybe you want to suggest a series to a friend but can't remeber its name or maybe you can't remeber what episode you last watched. EpisodeCounter helps you keep track of your series for you and is easy to use.
 
 
-![](header.png)
+![](intro_image.png)
 
 ## Installation
 
