@@ -29,4 +29,22 @@
     <string name="name_new">New</string>
     <string name="exit">Exit</string>
     <string name="delete_selected">Delete selected</string>
+    <string name="export_complete">Export complete.</string>
+    <string name="import_series">Import complete.</string>
+    <string name="series_already_exists">Series already exists</string>
+    <string name="series_created">Series created.</string>
+    <string name="failed_to_save_image">Failed to save image</string>
+    <string name="choose_file_to_import">Choose file to import:</string>
+    <string name="enter_filename_to_export_to">Enter filename to export to:</string>
+    <string name="delete">Delete</string>
+    <string name="enter">Enter</string>
+    <string name="number">number</string>
+    <string name="OK">OK</string>
+    <string name="value_out_of_range">Value out of range</string>
+    <string name="season">Season</string>
+    <string name="episode">Episode</string>
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="please_enter_title">Please enter title</string>
+    <string name="failed_to_fetch_image">Failed to fetch image</string>
 </resources>

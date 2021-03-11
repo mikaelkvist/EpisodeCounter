@@ -20,7 +20,7 @@ public class ExportObserver implements Observer<Object> {
 
     private OutputStream out;
     private OutputStreamWriter output;
-    private Context mContext;
+    private final Context mContext;
 
     public ExportObserver(Context context, Uri uri) {
         mContext = context;

@@ -111,8 +111,12 @@ public class SeriesRepository {
             }
             emitter.onComplete();
             
-        }).subscribeOn(Schedulers.io()).observeOn(Schedulers.computation());
+        }).subscribeOn(Schedulers.io()).observeOn(Schedulers.io());
+
+        // Observer for exporting data
         observable.subscribe(new ExportObserver(mContext, uri));
+
+        // Observer for Toast
         observable.observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Object>() {
              @Override
              public void onSubscribe(Disposable d) { }
@@ -122,7 +126,7 @@ public class SeriesRepository {
              public void onError(Throwable e) { }
              @Override
              public void onComplete() {
-                 Toast.makeText(mContext, "Export complete.", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(mContext, mContext.getString(R.string.export_complete), Toast.LENGTH_SHORT).show();
              }
          });
     }
@@ -150,7 +154,7 @@ public class SeriesRepository {
             }
         // skip first line, it contains just information about how the data is stored
         // Observer for importing each series
-        }).skip(1).subscribeOn(Schedulers.io()).observeOn(Schedulers.io());
+        }).skip(1).subscribeOn(Schedulers.io()).observeOn(Schedulers.computation());
         observable.subscribe(s -> {
             String[] values = s.toString().split(",");
             if (values.length == 6) {
@@ -178,7 +182,7 @@ public class SeriesRepository {
             public void onError(Throwable e) { }
             @Override
             public void onComplete() {
-                Toast.makeText(mContext, "Import complete.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, mContext.getString(R.string.import_series), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -234,10 +238,10 @@ public class SeriesRepository {
             public void onSuccess(Boolean value) {
 
                 if (value == Boolean.TRUE) {
-                    Toast.makeText(mContext, "Series already exist.",
+                    Toast.makeText(mContext, mContext.getString(R.string.series_already_exists),
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(mContext, "Series created.",
+                    Toast.makeText(mContext, mContext.getString(R.string.series_created),
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -306,7 +310,7 @@ public class SeriesRepository {
 
     public void showViewIfImageExist(View view, String imageName) {
         Single<Boolean> observable = Single.just(isImageSaved(imageName));
-        observable.subscribeOn(Schedulers.computation());
+        observable.subscribeOn(Schedulers.io());
         observable.subscribe(new SingleObserver<Boolean>() {
             @Override
             public void onSubscribe(Disposable d) { }
@@ -314,15 +318,8 @@ public class SeriesRepository {
             @Override
             public void onSuccess(Boolean value) {
 
-                if (value == Boolean.TRUE) {
-                    /*Toast.makeText(mContext, "Image exist.",
-                            Toast.LENGTH_SHORT).show();*/
-                    view.setVisibility(View.VISIBLE);
-                } else {
-                    /*Toast.makeText(mContext, "No such image.",
-                            Toast.LENGTH_SHORT).show();*/
-                    view.setVisibility(View.GONE);
-                }
+                if (value == Boolean.TRUE)  view.setVisibility(View.VISIBLE);
+                else                        view.setVisibility(View.GONE);
             }
 
             @Override
@@ -356,7 +353,7 @@ public class SeriesRepository {
                 // PNG is a lossless format, the compression factor (100) is ignored JPEG
                 mImageDateChanged.put(seriesTitle, DateCreator.getCurrentTime());
             } catch (IOException e) {
-                Toast.makeText(mContext, "Failed to save image", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, mContext.getString(R.string.failed_to_save_image), Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -383,6 +380,10 @@ public class SeriesRepository {
         deleteImage(series.getTitle());
     }
 
+    /*
+    OK fromIterable + onNext
+    Delete a list of series
+     */
     public void delete(List<Series> series) {
         Observable<Series> observable = Observable.fromIterable(series);
         observable.subscribeOn(Schedulers.io());
@@ -401,6 +402,10 @@ public class SeriesRepository {
         });
     }
 
+    /*
+    OK fromAction
+    Delete a single image from the app-file-directory
+     */
     public void deleteImage(final String seriesTitle) {
         Completable completable_delete = Completable.fromAction(() -> {
             // Delete old image

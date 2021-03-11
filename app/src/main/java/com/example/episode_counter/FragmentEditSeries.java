@@ -64,15 +64,16 @@ public class FragmentEditSeries extends BottomSheetDialogFragment {
         // Set information according to the selected series in SeriesViewModel
         Series series = mViewModel.getSelected().getValue();
         if (series == null) {
-            titleView.setText("New");
+            titleView.setText(R.string.name_new);
             mRemoveImageButton.setVisibility(View.GONE);
-            done.setText("Create");
+            done.setText(R.string.create);
         } else {
-            titleView.setText("Edit: " + series.getTitle());
+            String text = getString(R.string.edit) + ": " + series.getTitle();
+            titleView.setText(text);
             series_rating.setRating(series.getRating());
             mViewModel.loadImage(series.getTitle(), imageView);
             mViewModel.showViewIfImageExist(mRemoveImageButton, series.getTitle());
-            done.setText("Save");
+            done.setText(R.string.save);
         }
 
         // ----- Set up the clickListeners ----
@@ -97,7 +98,7 @@ public class FragmentEditSeries extends BottomSheetDialogFragment {
             // Need to specify title
             String newTitle = series_title.getText().toString();
             if (newTitle.equals("") && series == null) {
-                Toast.makeText(getActivity(), "Please enter title.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.please_enter_title, Toast.LENGTH_SHORT).show();
             } else {
                 if (newTitle.equals("") && series != null) {
                     // in case no title was entered, use the old one
@@ -154,7 +155,7 @@ public class FragmentEditSeries extends BottomSheetDialogFragment {
                 mRemoveImageButton.setVisibility(View.VISIBLE);
 
             } catch (IOException e) {
-                Toast.makeText(getActivity(), "Failed to fetch image.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), R.string.failed_to_fetch_image, Toast.LENGTH_SHORT).show();
             }
         }
     }

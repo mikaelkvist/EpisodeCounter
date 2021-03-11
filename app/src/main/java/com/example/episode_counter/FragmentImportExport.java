@@ -62,7 +62,7 @@ public class FragmentImportExport extends BottomSheetDialogFragment {
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             //intent.addCategory(Intent.CATEGORY_OPENABLE);
             intent.setType("text/plain");
-            startActivityForResult(Intent.createChooser(intent, "Choose file to import:"), PICK_IMPORT);
+            startActivityForResult(Intent.createChooser(intent, getString(R.string.choose_file_to_import)), PICK_IMPORT);
         });
         // Export button
         view.findViewById(R.id.export_button).setOnClickListener(v -> {
@@ -70,7 +70,7 @@ public class FragmentImportExport extends BottomSheetDialogFragment {
             intent.addCategory(Intent.CATEGORY_OPENABLE);
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_TITLE, "data.txt");
-            startActivityForResult(Intent.createChooser(intent, "Enter select filename to export to:"), PICK_EXPORT);
+            startActivityForResult(Intent.createChooser(intent, getString(R.string.enter_filename_to_export_to)), PICK_EXPORT);
 
 
         });

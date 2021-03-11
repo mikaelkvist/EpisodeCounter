@@ -86,9 +86,9 @@ public class FragmentExpanded extends Fragment {
 
     private void createDeleteDialog() {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
-        builder.setTitle("Delete " + selectedSeries.getTitle() + "?");
-        builder.setNegativeButton("Cancel", (dialogInterface, i) -> {});
-        builder.setPositiveButton("Delete", (dialogInterface, i) -> {
+        builder.setTitle(R.string.delete + " " + selectedSeries.getTitle() + "?");
+        builder.setNegativeButton(R.string.cancel, (dialogInterface, i) -> {});
+        builder.setPositiveButton(R.string.delete, (dialogInterface, i) -> {
             mViewModel.deleteSeries(selectedSeries);
             mViewModel.select(null);
             NavHostFragment.findNavController(FragmentExpanded.this).navigate(R.id.action_cancel);
@@ -103,9 +103,9 @@ public class FragmentExpanded extends Fragment {
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
         builder.setView(view);
-        builder.setTitle("Enter " + type + " number:");
-        builder.setNegativeButton("Cancel", (dialogInterface, i) -> {});
-        builder.setPositiveButton("OK", (dialogInterface, i) ->
+        builder.setTitle(getString(R.string.enter) + " " + type + " " + getString(R.string.number) + ":");
+        builder.setNegativeButton(R.string.cancel, (dialogInterface, i) -> {});
+        builder.setPositiveButton(R.string.OK, (dialogInterface, i) ->
                 newCountTest(type, numberInput.getText().toString()));
         builder.create().show();
 
@@ -116,7 +116,7 @@ public class FragmentExpanded extends Fragment {
         try {
             count = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            Toast.makeText(getContext(), "Value out of range", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.value_out_of_range, Toast.LENGTH_SHORT).show();
         }
         if (count != null) {
             if (type.equals("season")) {
@@ -155,9 +155,15 @@ public class FragmentExpanded extends Fragment {
         setEpisodeText();
     }
 
-    private void setSeasonText() { season_view.setText("Season: " + selectedSeries.getSeason()); }
+    private void setSeasonText() {
+        String text = getString(R.string.season) + ": " + selectedSeries.getSeason();
+        season_view.setText(text);
+    }
 
-    private void setEpisodeText() { episode_view.setText("Episode: " + selectedSeries.getEpisode());}
+    private void setEpisodeText() {
+        String text = getString(R.string.episode) +  ": " + selectedSeries.getEpisode();
+        episode_view.setText(text);
+    }
 
     private void setSelectedSeries(Series selected, View view) {
         // Start value
