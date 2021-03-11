@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     style="@style/Theme.SeriesTracker.Item">
@@ -26,7 +25,7 @@
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="_title"
+                    android:text="@string/title_placeholder"
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:textSize="@dimen/text_size_normal"
@@ -37,7 +36,7 @@
                     android:id="@+id/counter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="_counter"
+                    android:text="@string/counter_placeholder"
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:textSize="@dimen/text_size_small"
@@ -78,12 +77,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 style="@style/TitleTextStyleCompliment"
-                android:text="Selected"/>
+                android:text="@string/selected"/>
 
         </FrameLayout>
-
-
     </FrameLayout>
-
 
 </androidx.cardview.widget.CardView>

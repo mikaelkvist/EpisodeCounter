@@ -81,7 +81,7 @@ public class FragmentEditSeries extends BottomSheetDialogFragment {
         imageView.setOnClickListener(view1 -> startActivityForResult(
                 new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI), PICK_IMAGE_CODE));
         mRemoveImageButton.setOnClickListener(view14 -> {
-            imageView.setImageResource(R.drawable.ic_image_120);
+            imageView.setImageResource(R.drawable.ic_image_24);
             imageSet = false;
             removeImage = true;
             mRemoveImageButton.setVisibility(View.GONE);

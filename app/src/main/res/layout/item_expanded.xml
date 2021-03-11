@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_image_120"/>
+                android:src="@drawable/ic_image_24"/>
 
             <ImageView
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                     android:id="@+id/season_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="_Season"
+                    android:text="@string/season_placeholder"
                     android:textSize="@dimen/text_size_large"
                     android:textColor="@color/primary"
                     android:textStyle="bold"
@@ -73,7 +73,6 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/layout_episode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -91,7 +90,7 @@
                     android:id="@+id/episode_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="_Episode"
+                    android:text="@string/episode_placeholder"
                     android:textSize="@dimen/text_size_large"
                     android:textColor="@color/primary"
                     android:textStyle="bold"
@@ -111,7 +110,6 @@
     </FrameLayout>
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
         style="@style/Theme.SeriesTracker.Toolbar"
         app:menu="@menu/item_expanded_menu"
         app:contentInsetStart="0dp"
@@ -133,7 +131,7 @@
                 android:id="@+id/toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="_Title"
+                android:text="@string/title_placeholder"
                 android:maxLines="2"
                 android:ellipsize="end"
                 android:textSize="@dimen/text_size_normal"
