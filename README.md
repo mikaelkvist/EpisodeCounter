@@ -12,11 +12,9 @@ A device with at least Android 5.0 (Lollipop) if installing the APK or AndroidSt
 
 ## Installation
 
-Download the APK and install on your Android device or clone or fork the project and edit it in AndroidStudio.
+Download the APK (apk/episode_counter.apk) and install on your Android device or clone or fork the project and edit it in AndroidStudio.
 
 ## TODO
 
-- Create APK for downloading
-- Use RxJava in a consistent way (as similar as possible in all cases)
 - Make the RecycerView scroll to the top when a new sorting option is seleted
 
