@@ -16,6 +16,5 @@ Download the APK (apk/episode_counter.apk) and install on your Android device or
 
 ## TODO
 
-- App sometimes crashes when longclicking on item in RecyclerView after importing series that were created on another device
 - Make the RecycerView scroll to the top when a new sorting option is seleted
 
