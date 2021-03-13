@@ -1,6 +1,8 @@
 package com.example.episode_counter;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,19 @@ public class FragmentExpanded extends Fragment {
     private Series selectedSeries;
     private TextView season_view;
     private TextView episode_view;
+    private boolean isAttached;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        isAttached = true;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        isAttached = false;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -166,17 +181,20 @@ public class FragmentExpanded extends Fragment {
     }
 
     private void setSelectedSeries(Series selected, View view) {
-        // Start value
-        selectedSeries = selected;
 
-        // Set values for selected series
-        if (selectedSeries != null) {
-            ((TextView) view.findViewById(R.id.toolbar_title)).setText(selectedSeries.getTitle());
-            mViewModel.loadImage(selectedSeries.getTitle(),view.findViewById(R.id.image));
+        // Checks if attached, it is necessary since getString() will be called and it requires Context
+        if (isAttached) {
+            selectedSeries = selected;
 
-            setSeasonText();
-            setEpisodeText();
+            // Set values for selected series
+            if (selectedSeries != null) {
+                ((TextView) view.findViewById(R.id.toolbar_title)).setText(selectedSeries.getTitle());
+                mViewModel.loadImage(selectedSeries.getTitle(), view.findViewById(R.id.image));
 
+                setSeasonText();
+                setEpisodeText();
+
+            }
         }
     }
 
