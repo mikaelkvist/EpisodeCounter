@@ -2,7 +2,6 @@ package com.example.episode_counter;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,7 +100,7 @@ public class FragmentExpanded extends Fragment {
 
     private void createDeleteDialog() {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext());
-        builder.setTitle(R.string.delete + " " + selectedSeries.getTitle() + "?");
+        builder.setTitle(getString(R.string.delete) + " " + selectedSeries.getTitle() + "?");
         builder.setNegativeButton(R.string.cancel, (dialogInterface, i) -> {});
         builder.setPositiveButton(R.string.delete, (dialogInterface, i) -> {
             mViewModel.deleteSeries(selectedSeries);
