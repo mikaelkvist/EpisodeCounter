@@ -11,7 +11,7 @@ import java.io.File;
 
 public class BitmapConversions {
 
-    public static final String EMPTY_IMAGE_STRING = "";
+    public static final String EMPTY_IMAGE_STRING = "null";
 
 
     public static String getImageAsString(Context context, String title) {
