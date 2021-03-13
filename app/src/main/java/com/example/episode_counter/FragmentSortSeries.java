@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,7 @@ public class FragmentSortSeries extends BottomSheetDialogFragment {
                 .get(SeriesViewModel.class);
 
         // Information fields
+        RadioGroup radioGroup = view.findViewById(R.id.radio_group);
         RadioButton title_asc   = view.findViewById(R.id.title_asc);
         RadioButton title_desc  = view.findViewById(R.id.title_desc);
         RadioButton rating_high = view.findViewById(R.id.rating_high);
@@ -43,7 +45,6 @@ public class FragmentSortSeries extends BottomSheetDialogFragment {
         RadioButton date_new    = view.findViewById(R.id.date_new);
         RadioButton date_old    = view.findViewById(R.id.date_old);
         Button cancel           = view.findViewById(R.id.cancel);
-        Button done             = view.findViewById(R.id.done);
 
         // Select the current sorting order
         String sortOrder = mViewModel.getSortOrder();
@@ -61,14 +62,13 @@ public class FragmentSortSeries extends BottomSheetDialogFragment {
                 .navigate(R.id.action_cancel));
 
         // Done button  (save and exit)
-        done.setOnClickListener(view13 -> {
-
-            if      (title_asc.isChecked())     mViewModel.changeSortOrder("title_ASC");
-            else if (title_desc.isChecked())    mViewModel.changeSortOrder("title_DESC");
-            else if (rating_high.isChecked())   mViewModel.changeSortOrder("rating_high");
-            else if (rating_low.isChecked())    mViewModel.changeSortOrder("rating_low");
-            else if (date_new.isChecked())      mViewModel.changeSortOrder("date_new");
-            else if (date_old.isChecked())      mViewModel.changeSortOrder("date_old");
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.title_asc)        mViewModel.changeSortOrder("title_ASC");
+            else if (checkedId == R.id.title_desc)  mViewModel.changeSortOrder("title_DESC");
+            else if (checkedId == R.id.rating_high) mViewModel.changeSortOrder("rating_high");
+            else if (checkedId == R.id.rating_low)  mViewModel.changeSortOrder("rating_low");
+            else if (checkedId == R.id.date_new)    mViewModel.changeSortOrder("date_new");
+            else if (checkedId == R.id.date_old)    mViewModel.changeSortOrder("date_old");
 
             // Close BottomSheetDialogFragment no matter the result
             NavHostFragment.findNavController(FragmentSortSeries.this)

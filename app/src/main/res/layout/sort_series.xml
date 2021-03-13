@@ -27,6 +27,7 @@
         android:layout_height="@dimen/padding_small"/>
 
     <RadioGroup
+        android:id="@+id/radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -101,16 +102,16 @@
             android:text="@string/cancel"
             style="@style/NegativeButtonStyle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/done"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-        <Button
+        <!--<Button
             android:id="@+id/done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/sort"
             style="@style/PositiveButtonStyle"
             app:layout_constraintStart_toEndOf="@id/cancel"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
